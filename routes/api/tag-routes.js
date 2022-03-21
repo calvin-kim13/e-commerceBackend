@@ -19,7 +19,7 @@ router.get("/:id", async (req, res) => {
     const oneTag = await Tag.findOne({
       include: [Product],
       where: {
-        id: req.body.id,
+        id: req.params.id,
       },
     });
     res.status(200).json(oneTag);
